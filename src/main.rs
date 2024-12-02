@@ -4,6 +4,7 @@ use std::io::{Error, ErrorKind, Read};
 use std::path::Path;
 
 mod day1;
+mod day2;
 
 fn main() -> Result<(), Error> {
     let args: Vec<String> = env::args().collect();
@@ -30,7 +31,8 @@ fn main() -> Result<(), Error> {
     file.read_to_string(&mut contents)?;
 
     let solution = match day {
-        1 => if !part2 {day1::solve1(&contents)} else {day1::solve2(&contents)}
+        1 => if !part2 {day1::solve1(&contents)} else {day1::solve2(&contents)},
+        2 => if !part2 {day2::solve1(&contents, false)} else {day2::solve1(&contents, true)}
         _ => 0
     };
 
