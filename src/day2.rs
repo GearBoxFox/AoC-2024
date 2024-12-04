@@ -19,7 +19,7 @@ fn is_good<'a>(mut iter: impl Iterator<Item = &'a i32>) -> bool {
     true
 }
 
-pub fn solve1(input: &String, day_2: bool) -> isize {
+pub fn solve1(input: &String, _day_2: bool) -> isize {
     let lines = input.lines();
     let mut safe: i32 = 0;
 

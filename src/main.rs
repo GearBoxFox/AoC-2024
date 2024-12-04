@@ -1,10 +1,10 @@
 use std::env;
 use std::fs::File;
 use std::io::{Error, ErrorKind, Read};
-use std::path::Path;
 
 mod day1;
 mod day2;
+mod day3;
 
 fn main() -> Result<(), Error> {
     let args: Vec<String> = env::args().collect();
@@ -32,7 +32,8 @@ fn main() -> Result<(), Error> {
 
     let solution = match day {
         1 => if !part2 {day1::solve1(&contents)} else {day1::solve2(&contents)},
-        2 => if !part2 {day2::solve1(&contents, false)} else {day2::solve1(&contents, true)}
+        2 => if !part2 {day2::solve1(&contents, false)} else {day2::solve1(&contents, true)},
+        3 => day3::solve1(&contents, part2),
         _ => 0
     };
 
